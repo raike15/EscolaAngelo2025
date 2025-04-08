@@ -1,53 +1,113 @@
-# OUTRAS ESTRUTURAS DE DADOS: Tuplas, conjuntos e dicionários
+ # DICIONÁRIO X CONJUNDO X LISTA X TUPLA
 
-r = range(1, 9)
-print(r)
+n1 = 9
+n2 = 7
+n3 = 13
 
-for item in r:
+numeros = [9,7,13]
+numeros.append(21)
+numeros.remove(9)
+print(numeros[0])
+
+numeros = (9,7,13) # é uma tupla
+#não tem como adicionar,remover
+print(numeros[0])
+
+conjunto = set()
+conjunto.add(9)
+conjunto.add(7)
+print(conjunto)
+# print(conjunto[0]) Conjunto não tem ordem, então não tem índice
+
+conjunto = {"Ana", "Carol", "Maria", "Paula"}
+print(conjunto)
+print(conjunto)
+print(conjunto)
+
+print()
+for item in conjunto:
   print(item)
 
-lista = list(r)
-print(lista)
-
-lista_vazia = []
-lista_vazia = list()
-
-tupla = ()
-tupla = tuple()
-
-tupla = tuple(r)
-print(tupla)
-
-lista = ["Ana", "Paula", "Sofia"]
-tupla = ("Ana", "Pauloa", "Sofia")
-
-print(lista)
-print(tupla)
-
-lista.append("Isabelly")
-tupla # NÃO TEM COMO ADICIONAR, RETIRAR OU MODIFICAR APOS CRIAÇÃO
-
-conjunto = {}
-conjunto = set()
-
-conjunto = set(r)
-print(conjunto)
-
-conjunto.add(19)
-print(conjunto)
+# DICIONÁRIO
 
 dicionario = {}
 dicionario = dict()
 
-dicionario = {"SP":"São Paulo", "RJ":"Rio", "ES":"Espírito Santo", "MG":"Minas Gerais"}
-print(dicionario)
-print(dicionario["SP"])
+dicionario = {"Chave":"Valor", "Chave1":"Valor1"}
 
-dicionario_nomes = {0:"Ana", 1:"Maria", 2:"Carol", 3:"Cristal", 4:"Isabelly"}
+estados = {"SP":"São Paulo", "RJ":"Rio", "MG":"Minas"}
+print()
+print(estados)
+for item in estados:
+  print(item)
 
-print(dicionario_nomes[1])
+print()
+for item in estados:
+  print(estados[item])
 
-dicionario_paises = {55:"BR", 1:"USA", 23:"UK"}
+print()
+for chave in estados.keys():
+  print(chave) 
 
-print(dicionario_paises[55])
-# print(dicionario_paises[10])
+print()
+for valor in estados.values():
+  print(valor) 
+
+print()
+for chave, valor in estados.items():
+  print(chave, valor)
+
+estados["RJ"] = "Rio de Janeiro"
+print()
+print(estados["RJ"])
+
+estados["ES"] = "Espírito Santo"
+print()
+print(estados)
+
+# Conjunto (set) x Lista
+
+lista = []
+tupla = ()
+conjunto = {}
+
+lista.append("item")
+tupla # não tem como adicionar
+conjunto[0] = "item"
+
+print(conjunto)
+
+for i in conjunto:
+  print(i)
+
+print(conjunto[0])
+
+conjunto = set(range(0, 11))
+print(conjunto)
+
+# i = 0
+# while i < len(conjunto):
+#   print(conjunto[i])
+#   i += 1
+
+for item in conjunto:
+  print(item)
+
+# TUPLA x LISTA
+
+lista_vazia = []
+print(lista_vazia)
+lista_vazia.append("Bom dia")
+lista_vazia.append("Olá, mundo")
+print(lista_vazia)
+
+tupla = ()
+print(tupla)
+tupla = list(("Ana", "Paula", "Sofia"))
+tupla.append("Cristal")
+tupla = tuple(tupla)
+print(tupla)
+
+print(lista_vazia[0])
+print(tupla[3])
+ 
